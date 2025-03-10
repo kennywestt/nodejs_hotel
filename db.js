@@ -12,9 +12,9 @@ const db = require('mysql2');
 
 const conn = db.createPool({
     host : 'mariadb', //127.0.0.1 써도 됨
-    user : 'tj',
+    user : 'shilla',
     password : '1234',
-    database : 'study_db'
+    database : 'hotel_db'
 });
 
 // const conn = db.createPool({
