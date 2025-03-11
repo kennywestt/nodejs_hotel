@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const app = express();
@@ -24,13 +25,13 @@ const corsOptions = {
     origin: [
         process.env.SERVER_ADDRESS, // Node.js 호스팅 주소
         process.env.SERVICE_ADDRESS, // React 호스팅 주소
-       // "https://port-0-cloudtypenode-m6szyrxq03f42d77.sel4.cloudtype.app",
-       // "https://web-hotel-react-m6szyrxq03f42d77.sel4.cloudtype.app",
         "http://localhost:3000",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
 };
+console.log("env server: ",process.env.SERVER_ADDRESS);
+console.log("env service: ",process.env.SERVICE_ADDRESS);
 
 app.use(cors(corsOptions));
 
